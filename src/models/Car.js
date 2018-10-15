@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const mongoosePaginate = require('mongoose-paginate');
 
 const CarSchema = new mongoose.Schema({
     brand: {
@@ -20,5 +21,7 @@ const CarSchema = new mongoose.Schema({
     },
 
 });
+
+CarSchema.plugin(mongoosePaginate);
 
 mongoose.model('Car', CarSchema);
